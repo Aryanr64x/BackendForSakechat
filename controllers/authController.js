@@ -12,7 +12,9 @@ export const signUp = asyncHandler(async (req, res) => {
     const token = jwt.sign({ id: user._id }, "ANNESHA_GUHA");
     res.json({
         user: {
-            username: user.username
+            _id: user._id,
+            username: user.username,
+            chats: user.chats
         }, token
     })
 });
@@ -24,7 +26,9 @@ export const signIn = asyncHandler(async (req, res) => {
         const token = jwt.sign({ id: user._id }, "ANNESHA_GUHA")
         res.json({
             user: {
-                username: user.username
+                _id: user._id,
+                username: user.username,
+                chats: user.chats
             }, token
         })
     } else {

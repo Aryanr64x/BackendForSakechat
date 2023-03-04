@@ -7,6 +7,16 @@ const userSchema = mongoose.Schema({
         minLength: 5,
         unique: true
     },
+    chats:{
+        type:[
+        {
+            chat_id: { type: String, required: [true, "A chatid is required"]},
+            
+            chatname: {type: String, required: [true, "A chatname is required"]}
+        }
+    ],
+    default: []
+    },
 
     password:{
         type: String,
