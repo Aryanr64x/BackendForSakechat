@@ -1,6 +1,4 @@
 import mongoose from 'mongoose'
-
-
 const chatSchema = new mongoose.Schema({
     name:{
        type: String,   
@@ -8,8 +6,8 @@ const chatSchema = new mongoose.Schema({
     },
     
     totalMembers:{
-        type: Integer,
-        default: 0
+        type: Number,
+        required: [true, "Please specify how many members are there in the chat"]
     },
 
     members: {

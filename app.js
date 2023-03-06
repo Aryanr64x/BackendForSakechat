@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import { errorHandler } from './controllers/errorController.js';
 import authRouter from './routers/authRouter.js';
+import chatRouter from './routers/chatRouter.js';
 
 const app = express();
 app.use(express.json())
@@ -10,6 +11,7 @@ app.use(cors())
 
 
 app.use('/api', authRouter);
+app.use('/api/chat', chatRouter)
 
 app.use(
     errorHandler
